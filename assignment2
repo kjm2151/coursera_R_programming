@@ -24,8 +24,13 @@ cachemean <- function(x, ...) {
         m
 }
 
+## Assignment: Caching the Inverse of a Matrixless 
+## Matrix inversion is usually a costly computation and there may be some benefit to caching the inverse of a matrix rather than compute it repeatedly 
+## (there are also alternatives to matrix inversion that we will not discuss here). 
+## Your assignment is to write a pair of functions that cache the inverse of a matrix.
 
-## makeCacheMatrix function creates a matrix that can cache its inverse.
+## makeCacheMatrix:
+## This function creates a special "matrix" object that can cache its inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
@@ -39,8 +44,10 @@ makeCacheMatrix <- function(x = matrix()) {
   list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)}
 
 
-## cachesolve computes the inverse of the metric returned by makeCacheMatrix
-
+## cachesolve:
+## This function computes the inverse of the special "matrix" returned by makeCacheMatrix above. 
+## If the inverse has already been calculated (and the matrix has not changed), 
+## then the cachesolve should retrieve the inverse from the cache.
 cacheSolve <- function(x, ...) {
   inv <- x$getInverse()
   if(!is.null(inv)){
