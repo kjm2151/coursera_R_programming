@@ -1,4 +1,6 @@
 ## Assignment: Caching the Inverse of a Matrixless 
+## Below functions are used to store a matrix and caches its inverse. 
+
 
 ## makeCacheMatrix:
 ## This function creates a special "matrix" object that can cache its inverse.
